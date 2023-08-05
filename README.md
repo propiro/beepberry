@@ -2,8 +2,10 @@
 repository with beepberry (beepy) project related files.
 Beepberry is colloqiual name I like to use for beepy hardware client from here: 
 https://beepy.sqfmi.com
+
 it is supposed to run beeper:
 https://beeper.notion.site/Beepy-Beeper-Client-Setup-Tutorial-a2200b76f8764813bf7a70e9f69f46b3
+
 
 
 In this repo you might find:
