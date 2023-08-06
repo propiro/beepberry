@@ -30,8 +30,8 @@ average_voltage=$(echo "scale=4; $total_voltage / $samples" | bc -l)
 sudo modprobe bbqX0kbd
 
 # Define the minimum and maximum voltage values
-min_voltage=3.0
-max_voltage=3.7
+min_voltage=3.3
+max_voltage=4.2
 
 # Calculate the percentage
 percentage=$(awk -v min=$min_voltage -v max=$max_voltage -v voltage=$average_voltage \
