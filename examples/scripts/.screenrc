@@ -1,0 +1,67 @@
+
+#### SCREEN CONFIG
+
+defscrollback 3000
+
+##disable audio bell
+vbell on 		# def: off
+vbell_msg "-!!!-" 	# def: "Wuff,Wuff!!"
+
+##disable start msg
+startup_message off	# def: on
+
+
+
+
+
+#### SCREEN SETUP
+
+screen -t main bash
+screen -t side bash
+screen -t temp bash
+screen -t htop htop
+select main
+
+
+
+
+####STATUS BAR
+### this enables hardstatus bar
+hardstatus alwayslastline 
+
+## this enables reading values from both memory and battery scripts using backtick
+backtick 1 5 5 $HOME/scripts/batinfo.sh
+backtick 2 5 5 $HOME/scripts/meminfo.sh
+
+## hardstatus string config
+hardstatus string '[%= %?%-Lw%?%{=R}(%{W}%n*%f %t%?(%u)%?%{=k})%{=R}%?%+Lw%?%=][%l %2`][%1`][ %m/%d %c ]'
+
+
+
+
+##########################
+#### GARBAGE, LEGACY STUFF
+
+#blankerprg bt
+#idle 60 blanker
+
+#backtick 1 1 1 /bin/bash -c 'cpuLoad=$(cut -s -d\  -f16 <(uptime)); cpuLoad=${cpuLoad:0:-1}; memLoad=$(free -g | grep Mem | awk '\''{print $3"/"$2" GB"}'\''); echo "CPU: ${cpuLoad} Mem: ${memLoad}" '
+# backtick id lifespan autorefresh cmd args...
+#backtick 1 30 30 '~/screen_backtick_battery.sh'
+#batlog=$(tail -n 1 /home/piro/battery_log.txt)
+#silence wait 60 bt
+
+#hardstatus string "Scr: %n | %Y-%m-%d %c | [ %1`% ] [   %{-b dw}Load%{+b dk}:%{-b dg}%l %{+b dk}] [%{-b dg}%2`%{+b dk}]"
+#batlog=$(tail -n 1 /home/piro/battery_log.txt)
+
+#backtick 1 1 1 1
+#hardstatus alwayslastline
+#hardstatus string "Scr: %n | %Y-%m-%d %c | %h"
+#hardstatus string "%{.kW}%-w%{.bW}%t [%n]%{-}%+w %= %{..R} %1` %{..G} %H %{..Y} %Y/%m/%d %c"
+#hardstatus string 'Free Mem: %?M?%M (not available)%:%{=b}%M (%n)%=%t CPU Load: %3n %t'
+#hardstatus alwayslastline '%{= G}[%= %{= w}%?%-Lw%?%{= R}%n*%f %t%?%{= R}(%u)%?%{= w}%+Lw%?%= %{= g}][ %{y}Load: %l %{g}][%{B}%D %d-%    M-%Y %{W}%C:%s %A %{g}]'
+
+#VVVVV this one was ok
+
+#hardstatus string "%{= kG}[ %= %?%-Lw%?%{=R}(%{W}%n*%f %t%?(%u)%?%{=k})%{=R}%?%+Lw%?%?%= %{g}][%{Y}%H %{X}%{c}%l%{g}]%{g}[ %`cat voltage.txt`V %{c}%`cat percentage.txt`%% %{g}]%{= kG}[ %m/%d %c ]%="
+#hardstatus string "%{= kG}[ %= %?%-Lw%?%{=R}(%{W}%n*%f %t%?(%u)%?%{=k})%{=R}%?%+Lw%?%?%= %{g}][%{Y}%H %{X}%{c}%l%{g}]%{g}[ %{= c}%`cat /voltage.txt`V %{= c}%`cat /percentage.txt`%% %{g}]%{= kG}[ %m/%d %c ]%="
