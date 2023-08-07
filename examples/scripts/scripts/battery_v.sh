@@ -18,7 +18,7 @@ voltage=$(echo "$V * 3.3 * 2.1 / 4095" | bc -l | cut -c1-5)
 
 # Define the minimum and maximum voltage values
 min_voltage=3.3
-max_voltage=3.9
+max_voltage=4.2
 
 # Calculate the percentage
 percentage=$(awk -v min=$min_voltage -v max=$max_voltage -v voltage=$voltage \
