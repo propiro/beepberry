@@ -19,14 +19,14 @@ simple script to read battery voltage through analog pin of rpi2040
 
 - /scripts/battery_status.sh
 bit more advanced battery reading, with percentage output and sampling analog read
-![beepy_rgb.gif](https://github.com/propiro/beepberry/blob/3a556ec64002ca9df37f7ab8232deb2f8d58547a/images/beepy_rgb.gif)
-
 
 - /scripts/battery_rgb.sh
 same as above, but now uses rgb to communicate battery status
 
 - /scripts/rgb_led_functions.sh
 sample functions for interacting with beepberry RGB led
+![beepy_rgb.gif](https://github.com/propiro/beepberry/blob/3a556ec64002ca9df37f7ab8232deb2f8d58547a/images/beepy_rgb.gif)
+
 
 - .bashrc
 few usefull aliases, one being 'testbatt' - if you run it in background (screen is your friend), it'll periodically update /logs/percentage.txt, /logs/voltage.txt, /logs/battery_log.txt
